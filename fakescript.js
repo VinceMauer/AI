@@ -1,6 +1,6 @@
 var age = document.querySelector("h2.age");
 var gender = document.querySelector("h2.gender");
-var emotion = document.querySelector("h2.emotion");
+var emotionmax = document.querySelector("h2.emotion-max");
 
 function processImage() {
         // Replace <Subscription Key> with your valid subscription key.
@@ -49,11 +49,30 @@ function processImage() {
         .done(function(data) {
             // Show formatted JSON on webpage.
 
+
             $("#responseTextArea").val(JSON.stringify(data, null, 2));
             gender.textContent = data[0].faceAttributes.gender;
             age.textContent = data[0].faceAttributes.age;
-            emotion.textContent = data[0].faceAttributes.emotion;
-            console.log(data[0].faceAttributes.age);
+
+            var emotionsarray = [data[0].faceAttributes.emotion["anger"], data[0].faceAttributes.emotion["happiness"], data[0].faceAttributes.emotion["neutral"], data[0].faceAttributes.emotion["contempt"], data[0].faceAttributes.emotion["disgust"], data[0].faceAttributes.emotion["sadness"]];
+            var namearray = {anger: emotionsarray[0], happy: emotionsarray[1], neutral: emotionsarray[2], contempt: emotionsarray[3], disgust: emotionsarray[4], sadness: emotionsarray[5]};
+
+            function findMax(namearray){
+              var keys = Object.keys(namearray);
+              var max = keys[0];
+              for (var i = 1, n = keys.length; i < n; ++i) {
+                var k = keys[i];
+                if (namearray[k] > namearray[max]) {
+                  max = k;
+                }
+              }
+              return max;
+            }
+
+            emotionmax.textContent = findMax(namearray);
+
+
+            console.log(findMax(namearray));
 
         })
 
