@@ -1,6 +1,6 @@
 var age = document.querySelector("h2.age");
 var gender = document.querySelector("h2.gender");
-var emotion = document.querySelector("h2.emotion");
+var emotionmax = document.querySelector("h2.emotion-max");
 
 function processImage() {
         // Replace <Subscription Key> with your valid subscription key.
@@ -52,7 +52,7 @@ function processImage() {
             $("#responseTextArea").val(JSON.stringify(data, null, 2));
             gender.textContent = data[0].faceAttributes.gender;
             age.textContent = data[0].faceAttributes.age;
-            emotion.textContent = data[0].faceAttributes.emotion;
+            emotionmax.textContent = data[0].faceAttributes.emotion;
             console.log(data[0].faceAttributes.age);
 
         })
