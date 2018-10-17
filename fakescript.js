@@ -70,9 +70,12 @@ function processImage() {
             }
 
             emotionmax.textContent = findMax(namearray);
-
-
             console.log(findMax(namearray));
+
+            if(findMax('neutral')) {
+              console.log("bitch");
+            }
+
 
         })
 
@@ -89,14 +92,3 @@ function processImage() {
 
         console.log()
     };
-
-    // request.onload = function() {
-    // var jsonObj = request.response;
-    // console.log(jsonObj);
-    //
-    // showJson(jsonObj);
-    //
-    // function showJson(){
-    //   var h1 = document.createElement('h1');
-    //   h1.textContent = request.response.faceId;
-    // }
