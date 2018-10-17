@@ -1,3 +1,7 @@
+var age = document.querySelector("h2.age");
+var gender = document.querySelector("h2.gender");
+var emotion = document.querySelector("h2.emotion");
+
 function processImage() {
         // Replace <Subscription Key> with your valid subscription key.
         var subscriptionKey = "fc5a37bf5de84e4eb6281fc8e6f4595e";
@@ -44,7 +48,13 @@ function processImage() {
 
         .done(function(data) {
             // Show formatted JSON on webpage.
+
             $("#responseTextArea").val(JSON.stringify(data, null, 2));
+            gender.textContent = data[0].faceAttributes.gender;
+            age.textContent = data[0].faceAttributes.age;
+            emotion.textContent = data[0].faceAttributes.emotion;
+            console.log(data[0].faceAttributes.age);
+
         })
 
         .fail(function(jqXHR, textStatus, errorThrown) {
@@ -57,4 +67,17 @@ function processImage() {
                         jQuery.parseJSON(jqXHR.responseText).error.message;
             alert(errorString);
         });
+
+        console.log()
     };
+
+    // request.onload = function() {
+    // var jsonObj = request.response;
+    // console.log(jsonObj);
+    //
+    // showJson(jsonObj);
+    //
+    // function showJson(){
+    //   var h1 = document.createElement('h1');
+    //   h1.textContent = request.response.faceId;
+    // }
