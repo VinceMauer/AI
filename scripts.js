@@ -121,7 +121,7 @@ function processImage() {
     // below with "westus".
     //
     // Free trial subscription keys are generated in the westcentralus region.
-    // If you use a free trial subscription key, you shouldn't need to change 
+    // If you use a free trial subscription key, you shouldn't need to change
     // this region.
     var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
     // Request parameters.
