@@ -49,11 +49,21 @@ function processImage() {
         .done(function(data) {
             // Show formatted JSON on webpage.
 
+
             $("#responseTextArea").val(JSON.stringify(data, null, 2));
             gender.textContent = data[0].faceAttributes.gender;
             age.textContent = data[0].faceAttributes.age;
-            emotionmax.textContent = data[0].faceAttributes.emotion;
-            console.log(data[0].faceAttributes.age);
+
+            var emotionsarray = [data[0].faceAttributes.emotion["anger"], data[0].faceAttributes.emotion["happiness"], data[0].faceAttributes.emotion["neutral"], data[0].faceAttributes.emotion["contempt"], data[0].faceAttributes.emotion["disgust"], data[0].faceAttributes.emotion["sadness"]];
+            var namearray = {anger: emotionsarray[0], happy: emotionsarray[1], neutral: emotionsarray[2], contempt: emotionsarray[3], disgust: emotionsarray[4], sadness: emotionsarray[5]};
+            var arr = Object.keys(namearray).map(function(key){
+              return namearray[key];
+            });
+
+            var arrmax = Math.max.apply(null, arr);
+
+
+            console.log(arrmax);
 
         })
 
