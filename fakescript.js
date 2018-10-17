@@ -56,14 +56,23 @@ function processImage() {
 
             var emotionsarray = [data[0].faceAttributes.emotion["anger"], data[0].faceAttributes.emotion["happiness"], data[0].faceAttributes.emotion["neutral"], data[0].faceAttributes.emotion["contempt"], data[0].faceAttributes.emotion["disgust"], data[0].faceAttributes.emotion["sadness"]];
             var namearray = {anger: emotionsarray[0], happy: emotionsarray[1], neutral: emotionsarray[2], contempt: emotionsarray[3], disgust: emotionsarray[4], sadness: emotionsarray[5]};
-            var arr = Object.keys(namearray).map(function(key){
-              return namearray[key];
-            });
 
-            var arrmax = Math.max.apply(null, arr);
+            function findMax(namearray){
+              var keys = Object.keys(namearray);
+              var max = keys[0];
+              for (var i = 1, n = keys.length; i < n; ++i) {
+                var k = keys[i];
+                if (namearray[k] > namearray[max]) {
+                  max = k;
+                }
+              }
+              return max;
+            }
+
+            emotionmax.textContent = findMax(namearray);
 
 
-            console.log(arrmax);
+            console.log(findMax(namearray));
 
         })
 
