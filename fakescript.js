@@ -2,6 +2,35 @@ var age = document.querySelector("h2.age");
 var gender = document.querySelector("h2.gender");
 var emotionmax = document.querySelector("h2.emotion-max");
 
+
+// var requestURL = "https://api.themoviedb.org/3/movie/76341?api_key=bf3a9791e387b162ce2e5dbad7d6a36a";
+var requestURL = "https://ghibliapi.herokuapp.com/films";
+
+var request = new XMLHttpRequest();
+
+// request.open('GET', requestURL);
+// request.responseType = 'json';
+// setTimeout(function(){
+//     request.send();
+//     request.onload = function() {
+//     var jsonObj = request.response;
+//     console.log(jsonObj);
+//     console.log(jsonObj[0].title);
+//
+//
+//     };
+// },1);
+
+//******************Load state******************
+
+var checkLoad = setInterval(function(){
+    console.log(request.status);
+    if (request.status === 200) {
+        console.log('Load complete...');
+        clearInterval(checkLoad);
+    }
+},10);
+
 function processImage() {
         // Replace <Subscription Key> with your valid subscription key.
         var subscriptionKey = "fc5a37bf5de84e4eb6281fc8e6f4595e";
@@ -51,6 +80,12 @@ function processImage() {
 
 
             $("#responseTextArea").val(JSON.stringify(data, null, 2));
+
+
+
+
+
+
             gender.textContent = data[0].faceAttributes.gender;
             age.textContent = data[0].faceAttributes.age;
 
@@ -72,19 +107,39 @@ function processImage() {
             emotionmax.textContent = findMax(namearray);
             console.log(findMax(namearray));
 
-            if(emotionmax.textContent == "neutral") {
-              console.log("neutral bitch");
-            }  else if (emotionmax.textContent == "anger") {
-              console.log("angry bitch");
-            } else if (emotionmax.textContent == "hapiness") {
-              console.log("happy bitch");
-            } else if (emotionmax.textContent == "contempt") {
-              console.log("contempt bitch");
-            } else if (emotionmax.textContent == "disgust") {
-              console.log("disgust bitch");
-            } else if (emotionmax.textContent == "sadness") {
-              console.log("sadness bitch");
-            }
+
+
+            // request
+            request.open('GET', requestURL);
+            request.responseType = 'json';
+            setTimeout(function(){
+                request.send();
+                request.onload = function() {
+                var jsonObj = request.response;
+                console.log(jsonObj);
+
+                if(emotionmax.textContent == "neutral") {
+                  console.log("neutral bitch");
+                  document.querySelector("body").style.color = "grey";
+                  // console.log(jsonObj[0]["title"]);
+                  var titleofmovie = document.querySelector(".title-movie");
+                  titleofmovie.textContent = jsonObj[0]["title"];
+                }  else if (emotionmax.textContent == "anger") {
+                  console.log("angry bitch");
+                  document.querySelector("body").style.color = "red";
+                } else if (emotionmax.textContent == "hapiness") {
+                  console.log("happy bitch");
+                } else if (emotionmax.textContent == "contempt") {
+                  console.log("contempt bitch");
+                } else if (emotionmax.textContent == "disgust") {
+                  console.log("disgust bitch");
+                } else if (emotionmax.textContent == "sadness") {
+                  console.log("sadness bitch");
+                }
+
+                };
+            },1);
+
 
 
         })
@@ -100,5 +155,4 @@ function processImage() {
             alert(errorString);
         });
 
-        console.log()
     }
