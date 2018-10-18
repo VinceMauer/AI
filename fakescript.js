@@ -72,8 +72,18 @@ function processImage() {
             emotionmax.textContent = findMax(namearray);
             console.log(findMax(namearray));
 
-            if(findMax('neutral')) {
-              console.log("bitch");
+            if(emotionmax.textContent == "neutral") {
+              console.log("neutral bitch");
+            }  else if (emotionmax.textContent == "anger") {
+              console.log("angry bitch");
+            } else if (emotionmax.textContent == "hapiness") {
+              console.log("happy bitch");
+            } else if (emotionmax.textContent == "contempt") {
+              console.log("contempt bitch");
+            } else if (emotionmax.textContent == "disgust") {
+              console.log("disgust bitch");
+            } else if (emotionmax.textContent == "sadness") {
+              console.log("sadness bitch");
             }
 
 
@@ -91,4 +101,4 @@ function processImage() {
         });
 
         console.log()
-    };
+    }
