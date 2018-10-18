@@ -3,9 +3,9 @@
 
 <head>
     <title>Detect Faces Sample</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css"> </head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 <body>
     <h1>Detect Faces:</h1> Enter the URL to an image that includes a face or faces, then click the <strong>Analyze face</strong> button.
@@ -18,9 +18,10 @@
     <h2 class="gender"></h2>
     <h2 class="age"></h2>
     <h2 class="emotion-max"></h2>
+    <h2 class="title-movie"></h2>
 
     <div id="wrapper" style="width:1020px; display:table;">
-        <div id="jsonOutput" style="width:600px; display:table-cell;"> Response:
+        <div id="jsonOutput"> Response:
             <br>
             <br>
             <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
@@ -29,8 +30,8 @@
             <br>
             <br> <img id="sourceImage" width="400" /> </div>
     </div>
-    <script src="fakescript.js">
-    </script>
+
+<script src="fakescript.js"></script>
 <!--<script src="webcam.js"></script>-->
 <!--<script src="scripts.js"></script>-->
 </body>
