@@ -1,18 +1,60 @@
+body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin-bottom: 0:
+}
+
 html{
-  margin: 1rem;
+  /* margin: 1rem; */
+
 }
 
 body{
   font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  background-image:linear-gradient(4545deg, #fc5c7d, #6a82fb);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+p {
+  margin: 0;
 }
 
 
+
+.container {
+  position: relative;
+  top: 5em;
+  display: block;
+  background-color: white;
+  border-radius: 1.5em;
+  padding: 1em 3em;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 5em;
+box-shadow: 3px 3px 30px rgba(0,0,0,.4);
+  text-align: center;
+
+
+}
+
 .cover{
-    height: 200px;
+    height: 300px;
+    display: inline-block;
+    position: absolute;
+    top:53em;
+    right: 6em;
+    float: right;
 }
 
 .suggest{
   display: none;
+  margin-bottom: 2em !important;
 }
 
 #jsonOutput {
@@ -47,22 +89,99 @@ body{
     display: inline-block;
 }
 
-#startbutton {
-    display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: 32px;
-    background-color: rgba(0, 150, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
-    font-size: 14px;
-    font-family: "Lucida Grande", "Arial", sans-serif;
-    color: rgba(255, 255, 255, 1.0);
+.send, .suggest {
+  background-color: #1abc9c;
+  color: white;
+margin: 0;
+padding: .3em 1.5em;
+box-shadow: 0px 3px #2E856D ;
+position: relative;
+border: 0;
+font-weight: bold;
+line-height: 1.5;
+cursor: pointer;
+display: inline-block;
+text-decoration: none!important;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+border-radius: 1.25em;
+min-height: 1.5rem;
+min-width: 1.5rem;
+}
+
+input[type="text"]{
+  width: 70%;
+      display: block;
+      border: .0625rem solid #1abc9c;
+      color: #606060;
+      font-size: 1rem;
+      border-radius: .5rem;
+      transition: border .2s linear,color .2s linear;
+      text-overflow: ellipsis;
+      -webkit-appearance: none;
+      -moz-appearance: textfield;
+      appearance: none;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1em;
+      margin-bottom:1em;
+
+}
+
+input[type="text"]:active{
+  border: .0625rem solid #00aeff;
+}
+.gender, .age, .emotion-max {
+  color: #1abc9c;
+  text-transform: capitalize;
+}
+
+.emotion-max {
+  margin-bottom: 3em;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 2em;
+}
+
+.movie-title, .movie-description, .movie-director, .movie-releasedate, .movie-result{
+  text-align: left;
+
+}
+.movie-title {
+  font-size: 2em;
+  padding: 0;
+
+}
+
+.movie-description{
+  display:block;
+  width: 50%;
+
+  text-align: left;
+
+
+
+}
+.movie-result {
+  color: grey;
+}
+.suggest{
+  display: none;
 }
 
 .contentarea {
     font-size: 16px;
     font-family: "Lucida Grande", "Arial", sans-serif;
     width: 760px;
+}
+
+#imageDiv {
+  display: block;
+  width: 100%;
+}
+#imageDiv img {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2em;
 }
