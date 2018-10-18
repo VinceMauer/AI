@@ -2,38 +2,36 @@
 <html>
 
 <head>
-    <title>Detect Faces Sample</title>
+    <title>Animotion</title>
     <link rel="stylesheet" href="style.css"> </head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 <body>
-    <h1>Detect Faces:</h1> Enter the URL to an image that includes a face or faces, then click the <strong>Analyze face</strong> button.
-    <br>
-    <br> Image to analyze:
+  <div class="container">
+    <h1>Animotion</h1> <p>Find out which anime you want to see!</p>
+
+    <br> <strong>Upload a photo</strong>
     <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
-    <button onclick="processImage()">Analyze face</button>
-    <br>
-    <br>
+    <input  class="send" type="submit" value="Send" onclick="processImage()">
+
+    <div id="imageDiv">
+      <img id="sourceImage"/>
+    </div>
     <h2 class="gender"></h2>
     <h2 class="age"></h2>
     <h2 class="emotion-max"></h2>
+    <h4 class="movie-result"></h4>
     <h2 class="movie-title"></h2>
     <p class="movie-description"></p>
     <h2 class="movie-director"></h2>
     <h2 class="movie-releasedate"></h2>
     <img src="" alt="" class="cover">
-    <button class="suggest" onclick="processImage()">suggest another one</button>
-    <div id="wrapper" style="width:1020px; display:table;">
-        <div id="jsonOutput"> Response:
-            <br>
-            <br>
-            <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
-        </div>
-        <div id="imageDiv" style="width:420px; display:table-cell;"> Source image:
-            <br>
-            <br> <img id="sourceImage" width="400" /> </div>
-    </div>
+    <input type="submit" value="Suggest another one" class="suggest" onclick="processImage()">
+</div>
+
+
+
 
 <script src="fakescript.js"></script>
 <!--<script src="webcam.js"></script>-->

@@ -3,7 +3,7 @@ var gender = document.querySelector("h2.gender");
 var emotionmax = document.querySelector("h2.emotion-max");
 var selectCover = document.querySelector('img.cover');
 var suggestButton = document.querySelector('.suggest');
-
+var resultHeader = document.querySelector(".movie-result");
 var titleofmovie = document.querySelector(".movie-title");
 var descriptionofmovie = document.querySelector(".movie-description");
 var directorofmovie = document.querySelector(".movie-director");
@@ -166,66 +166,77 @@ function processImage() {
                 merge(jsonObj[11], film12);
 
                 // console.log(jsonObj[3]);
-
+                document.querySelector("#sourceImage").style.border = "5px solid white";
+                document.querySelector("#sourceImage").style.outline = "5px solid #1abc9c";
+resultHeader.textContent = "Movie you'd like: "
 
                 if(emotionmax.textContent == "neutral" && age.textContent > "18" ) {
                   // console.log("neutral bitch");
-                  document.querySelector("body").style.color = "grey";
+                  document.body.style.backgroundImage = "linear-gradient( 45deg, #355c7d, #6c5b7b, #c06c84)";
+
 
                   var randomNeutral = neutralMoviesArray[Math.floor(neutralMoviesArray.length * Math.random())];
 
                   titleofmovie.textContent = randomNeutral["title"];
                   descriptionofmovie.textContent = randomNeutral["description"];
-                  directorofmovie.textContent = randomNeutral["director"];
+                  directorofmovie.textContent = "Director: "+ randomNeutral["director"];
                   releasedateofmovie.textContent = randomNeutral["release_date"];
                   // loadMore.setAttribute('class', 'more');
                   selectCover.src = randomNeutral["cover"];
                   suggestButton.style.display = "block";
                 }  else if (emotionmax.textContent == "anger") {
                   // console.log("angry bitch");
-                  document.querySelector("body").style.color = "red";
+                  document.body.style.backgroundImage = "linear-gradient( 45deg, #ed213a, #93291e)";
 
                   var randomAnger = angerMoviesArray[Math.floor(angerMoviesArray.length * Math.random())];
 
                   titleofmovie.textContent = randomAnger["title"];
                   descriptionofmovie.textContent = randomAnger["description"];
-                  directorofmovie.textContent = randomAnger["director"];
+                  directorofmovie.textContent = "Director: "+randomAnger["director"];
                   releasedateofmovie.textContent = randomAnger["release_date"];
                   selectCover.src = randomAnger["cover"];
                 } else if (emotionmax.textContent == "happiness") {
-                  console.log("happy bitch");
+
+                  document.body.style.backgroundImage = "linear-gradient( 45deg, #36d1dc, #5b86e5)";
+
                   var randomHappiness = happinessMoviesArray[Math.floor(happinessMoviesArray.length * Math.random())];
 
                   titleofmovie.textContent = randomHappiness["title"];
                   descriptionofmovie.textContent = randomHappiness["description"];
-                  directorofmovie.textContent = randomHappiness["director"];
+                  directorofmovie.textContent = "Director: "+randomHappiness["director"];
                   releasedateofmovie.textContent = randomHappiness["release_date"];
                   selectCover.src = randomHappiness["cover"];
                 } else if (emotionmax.textContent == "contempt") {
                   // console.log("contempt bitch");
+                  document.body.style.backgroundImage = "linear-gradient( 45deg, #20002c, #cbb4d4)";
+
                   var randomContempt = contemptMoviesArray[Math.floor(contemptMoviesArray.length * Math.random())];
 
                   titleofmovie.textContent = randomContempt["title"];
                   descriptionofmovie.textContent = randomContempt["description"];
-                  directorofmovie.textContent = randomContempt["director"];
+                  directorofmovie.textContent = "Director: "+ randomContempt["director"];
                   releasedateofmovie.textContent = randomContempt["release_date"];
                   selectCover.src = randomContempt["cover"];
                 } else if (emotionmax.textContent == "disgust") {
                   // console.log("disgust bitch");
+                  document.body.style.backgroundImage = "linear-gradient( -135deg, #a80077, #66ff00)";
+
                   var randomDisgust = disgustMoviesArray[Math.floor(disgustMoviesArray.length * Math.random())];
 
                   titleofmovie.textContent = randomDisgust["title"];
                   descriptionofmovie.textContent = randomDisgust["description"];
-                  directorofmovie.textContent = randomDisgust["director"];
+                  directorofmovie.textContent = "Director: "+randomDisgust["director"];
                   releasedateofmovie.textContent = randomDisgust["release_date"];
                   selectCover.src = randomDisgust["cover"];
                 } else if (emotionmax.textContent == "sadness") {
-                  // console.log("sadness bitch");
+
+                  document.body.style.backgroundImage = "linear-gradient( 45deg, #360033, #0b8793)";
+
                   var randomSadness = sadnessMoviesArray[Math.floor(sadnessMoviesArray.length * Math.random())];
 
                   titleofmovie.textContent = randomSadness["title"];
                   descriptionofmovie.textContent = randomSadness["description"];
-                  directorofmovie.textContent = randomSadness["director"];
+                  directorofmovie.textContent = "Director: "+randomSadness["director"];
                   releasedateofmovie.textContent = randomSadness["release_date"];
                   selectCover.src = randomSadness["cover"];
                 }
