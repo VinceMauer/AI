@@ -1,5 +1,18 @@
+html{
+  margin: 1rem;
+}
+
 body{
   font-family: 'Montserrat', sans-serif;
+}
+
+
+.cover{
+    height: 200px;
+}
+
+.suggest{
+  display: none;
 }
 
 #jsonOutput {
