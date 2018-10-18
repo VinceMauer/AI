@@ -126,7 +126,7 @@ function processImage() {
                 console.log(jsonObj);
 
                 var neutralMoviesArray = [jsonObj[0], jsonObj[4], jsonObj[6]];
-                var angerMoviesArray = [jsonObj[2], jsonObj[7], jsonObj[12]];
+                var angerMoviesArray = [jsonObj[2], jsonObj[7], jsonObj[10]];
                 var happinessMoviesArray = [jsonObj[5], jsonObj[3], jsonObj[11]];
                 var disgustMoviesArray = [jsonObj[1], jsonObj[8], jsonObj[9]];
                 var contemptMoviesArray = [jsonObj[10], jsonObj[7], jsonObj[3]];
@@ -186,7 +186,7 @@ resultHeader.textContent = "Movie you'd like: "
                   suggestButton.style.display = "block";
                 }  else if (emotionmax.textContent == "anger") {
                   // console.log("angry bitch");
-                  document.body.style.backgroundImage = "linear-gradient( 45deg, #ed213a, #93291e)";
+                  document.body.style.backgroundImage = "linear-gradient( 45deg, #333333, #dd1818)";
 
                   var randomAnger = angerMoviesArray[Math.floor(angerMoviesArray.length * Math.random())];
 

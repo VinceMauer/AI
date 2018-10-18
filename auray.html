@@ -12,22 +12,25 @@
     <h1>Animotion</h1> <p>Find out which anime you want to see!</p>
 
     <br> <strong>Upload a photo</strong>
-    <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
+    <input type="text" name="inputImage" id="inputImage" value="https://scstylecaster.files.wordpress.com/2015/04/ferretti-bbt-s14-024.jpg" />
     <input  class="send" type="submit" value="Send" onclick="processImage()">
 
     <div id="imageDiv">
       <img id="sourceImage"/>
     </div>
-    <h2 class="gender"></h2>
-    <h2 class="age"></h2>
-    <h2 class="emotion-max"></h2>
-    <h4 class="movie-result"></h4>
-    <h2 class="movie-title"></h2>
-    <p class="movie-description"></p>
-    <h2 class="movie-director"></h2>
-    <h2 class="movie-releasedate"></h2>
-    <img src="" alt="" class="cover">
-    <input type="submit" value="Suggest another one" class="suggest" onclick="processImage()">
+    <div class="moviecontainer">
+      <h2 class="gender"></h2>
+      <h2 class="age"></h2>
+      <h2 class="emotion-max"></h2>
+      <h4 class="movie-result"></h4>
+      <h2 class="movie-title"></h2>
+      <p class="movie-description"></p>
+      <h2 class="movie-director"></h2>
+      <h2 class="movie-releasedate"></h2>
+      <img src="" alt="" class="cover">
+      <input type="submit" value="Suggest another one" class="suggest" onclick="processImage()">
+    </div>
+
 </div>
 
 
