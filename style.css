@@ -42,14 +42,18 @@ box-shadow: 3px 3px 30px rgba(0,0,0,.4);
 
 
 }
-
+.moviecontainer{
+position: relative;
+}
 .cover{
     height: 300px;
     display: inline-block;
+    float:right;
     position: absolute;
-    top:53em;
-    right: 6em;
-    float: right;
+    top: 19em;
+    right: 4em;
+
+
 }
 
 .suggest{
