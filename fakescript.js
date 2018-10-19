@@ -40,7 +40,7 @@ var checkLoad = setInterval(function(){
 
 function processImage() {
         // Replace <Subscription Key> with your valid subscription key.
-        var subscriptionKey = "fc5a37bf5de84e4eb6281fc8e6f4595e";
+        var subscriptionKey = "374809371604448f968bdc36b447e98a";
 
         // NOTE: You must use the same region in your REST call as you used to
         // obtain your subscription keys. For example, if you obtained your
